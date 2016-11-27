@@ -24,8 +24,13 @@ total_length=$(sh mpv_identify.sh -frames 0 -vc null -vo null -ao null "$filenam
 # Reference https://github.com/mpv-player/mpv/blob/master/TOOLS/mpv_identify.sh
 
 # Remove 4 seconds from the video so that it doesn't take screenshot at the ends.
-
 let total_length-=4
+
+# Add 1 to the div number, like that the image is not at the end of the video
+# else, for 1 picture total_length/1 = total_length, so the end
+# with that, it'll be total_length/2
+DIV_NUMBER=${NUM_OF_SCREENSHOTS}
+let DIV_NUMBER+=1
 
 # time_slice: At which time interval should mplayer take screenshots.
 let time_slice=${total_length}/${NUM_OF_SCREENSHOTS}
