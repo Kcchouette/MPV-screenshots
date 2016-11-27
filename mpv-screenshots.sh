@@ -33,7 +33,7 @@ DIV_NUMBER=${NUM_OF_SCREENSHOTS}
 let DIV_NUMBER+=1
 
 # time_slice: At which time interval should mplayer take screenshots.
-let time_slice=${total_length}/${NUM_OF_SCREENSHOTS}
+let time_slice=${total_length}/${DIV_NUMBER}
 
 # time_at: When should mplayer take screenshots.
 time_at=${time_slice};
